@@ -11,7 +11,12 @@ const questions = [
 const answers = []
 
 //loop
+// for (let i = 0; i < questions.length; i++) {
+//     const answer = prompt(questions[i])
+//     answers.push(answer)
+// }
 
+// alert(answers)
 
 // ========================
 
@@ -21,7 +26,20 @@ const answers = []
 
 const num = [2,5,9,10,23]
 
+function getNum(numAry) {
+    const noOdd = numAry.filter(function(number){
+        return number % 2 === 0
+    })
 
+    const multiNum = noOdd.map(function(number){
+        return number*3
+    })
+
+    return multiNum
+
+}
+
+console.log(getNum(num))
 
 // ==========================
 
@@ -29,7 +47,19 @@ const num = [2,5,9,10,23]
 
 const words = ["cat", "pizza", "javascript"]
 
+const getLongestWord = function(wordAry) {
+    let currentWord = ''
+    wordAry.forEach(function(word){
+        if(currentWord.length < word.length) {
+            currentWord = word
+        }
+    })
 
+    return currentWord
+
+}
+
+console.log(getLongestWord(words))
 // ==============================
 
 // Write a function to take a word and/or sentence and remove all of the vowels
@@ -38,7 +68,20 @@ const words = ["cat", "pizza", "javascript"]
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
 
+const noVowelsOrSpaces = function(word) {
+    const vowels = ['a', 'e', 'i', 'o', 'u']
+    const wordAry = word.toLowerCase().split('').filter(function(letter) {
+        return letter !== " "
+    })
+    const noVowels = wordAry.filter(function(letter) {
+        return !vowels.includes(letter)
+    })
 
+    return noVowels.join('')
+
+}
+
+console.log(noVowelsOrSpaces('Javascript and HTML'))
 
 
 // ===================
@@ -53,10 +96,14 @@ const words = ["cat", "pizza", "javascript"]
 
 function cToF(celsius) {
     //Your code here
+    const toFahrenheit = (celsius * 9)/5+32
+    console.log(celsius + 'C ' + toFahrenheit + 'F')
 }
 
 function ftoC(fahrenheit) {
    //Your code here
+   const toCelsius = ((fahrenheit - 32)*5)/9
+   console.log(fahrenheit + 'F ' + toCelsius.toFixed(2) + 'C')
 }
 
 cToF(20)
