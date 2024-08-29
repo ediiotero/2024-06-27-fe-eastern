@@ -26,13 +26,13 @@ function testScopeGlobal() {
   // x can NOT be used here
 let test3 = 'Hello'
 
-// function testScopeLet() {
-//     if(true){
-//         let test3 = 'World'
-//         console.log(`if block: ${test3}`)
-//     }
-//     console.log(`let: `, test3)
-// }
+function testScopeLet() {
+    if(true){
+        let test3 = 'World'
+        console.log(`if block: ${test3}`)
+    }
+    console.log(`let: `, test3)
+}
 
 // testScopeLet()
 
@@ -47,12 +47,12 @@ let test3 = 'Hello'
   // x CAN be used here
 var test4 = 'Test 4'
 
-// function testScopeVar() {
-//     if(true){
-//         var test4 = 'Hello test 4'
-//     }
-//     console.log(`var: `, test4)
-// }
+function testScopeVar() {
+    if(true){
+        var test4 = 'Hello test 4'
+    }
+    console.log(`var: `, test4)
+}
 
 // testScopeVar()
 
@@ -62,19 +62,19 @@ var test4 = 'Test 4'
 
 // code here can NOT use carName
 
-// function myFunction() {
-//     let carName = "Volvo";
-//     console.log(carName)
-//     // code here CAN use carName
-//     if(true) {
+function myFunction() {
+    let carName = "Volvo";
+    console.log(carName)
+    // code here CAN use carName
+    if(true) {
         
-//         console.log(`can use ${carName}`)
-//     }
-// };
+        console.log(`can use ${carName}`)
+    }
+};
 
 // console.log(carName)
 
-// myFunction()
+myFunction()
   
   // code here can NOT use carName
 
