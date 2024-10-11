@@ -6,17 +6,27 @@
 import React, { Component } from 'react'
 
 
-// const WordProp = props => {
-//   return (
-//   )
-// }
+const WordProp = props => {
+  return (
+    <div style={{fontSize: '4rem', margin: '2rem'}}>{props.word}</div>
+  )
+}
 
 export default class ClickWord extends Component {
+
+  state = {
+    word: 'Javascript'
+  }
+
+  handleWordChange = newWord => {
+    this.setState({word: newWord})
+  }
   
   render() {
     return (
       <>
-      
+        <WordProp word={this.state.word} />
+        <button onClick={() => this.handleWordChange('HTML')}>Change Word</button>
       </>
     )
   }
